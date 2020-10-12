@@ -1,0 +1,22 @@
+program main1(input, output);
+    var a,b,c,d: integer;
+
+    (* Adds numbers *)
+    
+
+    (* Using this to test procedures *)
+    procedure multadd;
+    begin
+        c := a+b;
+        d := c*a
+    end;
+
+begin
+    a := 5;
+    b := 3;
+    multadd;
+    while (a > b) do
+      b := b + 1;
+    write(c);
+    write(d)
+end.
