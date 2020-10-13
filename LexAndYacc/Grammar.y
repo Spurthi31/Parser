@@ -18,7 +18,7 @@
     /* Numbers */
     int i_val;
     float f_val;
-    char char_val;
+    char *char_val;
     /* Operators */
     int op_val;
 

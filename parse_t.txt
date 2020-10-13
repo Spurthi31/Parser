@@ -1,5 +1,6 @@
 program main1(input, output);
     var a,b,c,d: integer;
+    var f: real;
     var e: char;
     var arr: array[1..5] of char;
 
@@ -15,8 +16,9 @@ program main1(input, output);
 
 begin
     a := 5;
+    f := 5+4.5;
     b := 3;
-    e := "a";
+    e := "arwvm"-"b";
     multadd;
     while (a > b) do
       b := b + 1;

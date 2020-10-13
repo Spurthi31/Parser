@@ -8,6 +8,8 @@
       b
       c
       d
+    [VARDECL of type 266]
+      f
     [VARDECL of type 267]
       e
     [ARRDECL of type 267 in range(1, 5)]
@@ -46,6 +48,15 @@
           [I_NUM:5]
       [VARASSIGN]:
         [VAR]:
+          [VAR_ID:f]
+        [EXPR]:
+          [ADDOP:292]:
+            [LEFT]:
+              [I_NUM:5]
+            [RIGHT]:
+              [R_NUM:4.500000]
+      [VARASSIGN]:
+        [VAR]:
           [VAR_ID:b]
         [EXPR]:
           [I_NUM:3]
@@ -53,7 +64,13 @@
         [VAR]:
           [VAR_ID:e]
         [EXPR]:
-          [CHAR_VAL:0.000000]
+          [CHAR_VAL:"arwvm"-"b";
+    multadd;
+    while (a > b) do
+      b := b + 1;
+    write(c);
+    write(d)
+end.]
       [PROCEDURE_CALL:multadd]:
         [ARGS]:
       [WHILE]:

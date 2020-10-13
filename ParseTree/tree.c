@@ -300,7 +300,7 @@ void expr_print(struct Expression *expr, FILE *f, int num_indent)
           break;
 
         case EXPR_CHARVAL:
-          fprintf(f, "[CHAR_VAL:%f]\n", expr->expr_data.r_num);
+          fprintf(f, "[CHAR_VAL:%s]\n", expr->expr_data.char_val);
           break;
 
         default:
@@ -809,7 +809,7 @@ struct Expression *mk_rnum(int line_num, float r_num)
     return new_expr;
 }
 
-struct Expression *mk_charval(int line_num, char char_val)
+struct Expression *mk_charval(int line_num, char *char_val)
 {
     struct Expression *new_expr;
     new_expr = (struct Expression *)malloc(sizeof(struct Expression));

@@ -131,7 +131,7 @@ struct Expression
         /* Real number */
         float r_num;
 
-        char char_val;
+        char *char_val;
     } expr_data;
 };
 

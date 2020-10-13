@@ -14,7 +14,7 @@ integer  [0-9]+
 real [0-9]*[.][0-9]+
 id   [A-Za-z][A-Za-z0-9]*
 comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
-char ["].["]
+char ["].*["]
 
 %%
 
@@ -311,7 +311,7 @@ char ["].["]
         fprintf(stderr, "[CHAR:%s] ", yytext);
     #endif
     
-    yylval.char_val = yytext[0];
+    yylval.char_val = yytext;
     return CHAR_VAL;
 }
 
