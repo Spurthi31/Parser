@@ -1,5 +1,7 @@
 program main1(input, output);
     var a,b,c,d: integer;
+    var e: char;
+    var arr: array[1..5] of char;
 
     (* Adds numbers *)
     
@@ -14,6 +16,7 @@ program main1(input, output);
 begin
     a := 5;
     b := 3;
+    e := "a";
     multadd;
     while (a > b) do
       b := b + 1;

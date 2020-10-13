@@ -8,6 +8,10 @@
       b
       c
       d
+    [VARDECL of type 267]
+      e
+    [ARRDECL of type 267 in range(1, 5)]
+      arr
   [SUBPROGRAMS]:
     [PROCEDURE:multadd]:
           [ARGS]:
@@ -19,7 +23,7 @@
             [VAR]:
               [VAR_ID:c]
             [EXPR]:
-              [ADDOP:290]:
+              [ADDOP:292]:
                 [LEFT]:
                   [VAR_ID:a]
                 [RIGHT]:
@@ -28,7 +32,7 @@
             [VAR]:
               [VAR_ID:d]
             [EXPR]:
-              [MULOP:294]:
+              [MULOP:296]:
                 [LEFT]:
                   [VAR_ID:c]
                 [RIGHT]:
@@ -45,10 +49,15 @@
           [VAR_ID:b]
         [EXPR]:
           [I_NUM:3]
+      [VARASSIGN]:
+        [VAR]:
+          [VAR_ID:e]
+        [EXPR]:
+          [CHAR_VAL:0.000000]
       [PROCEDURE_CALL:multadd]:
         [ARGS]:
       [WHILE]:
-        [RELOP:287]:
+        [RELOP:289]:
           [LEFT]:
             [VAR_ID:a]
           [RIGHT]:
@@ -58,7 +67,7 @@
           [VAR]:
             [VAR_ID:b]
           [EXPR]:
-            [ADDOP:290]:
+            [ADDOP:292]:
               [LEFT]:
                 [VAR_ID:b]
               [RIGHT]:

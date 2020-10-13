@@ -18,7 +18,7 @@
     /* Numbers */
     int i_val;
     float f_val;
-
+    char char_val;
     /* Operators */
     int op_val;
 
@@ -95,6 +95,8 @@
 %token REAL_NUM
 %token INT_TYPE
 %token REAL_TYPE
+%token CHAR_TYPE
+%token CHAR_VAL
 
 %token ID
 %token ARRAY
@@ -181,6 +183,7 @@
 %type<ident> ident
 %type<i_val> int_num
 %type<f_val> real_num
+%type<char_val> char_val
 %type<op_val> relop
 %type<op_val> addop
 %type<op_val> mulop
@@ -214,6 +217,10 @@ int_num
 
 real_num
     : REAL_NUM {$$ = yylval.f_val;}
+    ;
+
+char_val
+    : CHAR_VAL {$$ = yylval.char_val;}
     ;
 
 relop
@@ -276,6 +283,7 @@ type
 standard_type
     : INT_TYPE {$$ = INT_TYPE;}
     | REAL_TYPE {$$ = REAL_TYPE;}
+    | CHAR_TYPE {$$ = CHAR_TYPE;}
     ;
 
 subprogram_declarations
@@ -542,6 +550,10 @@ factor
     | real_num
         {
             $$ = mk_rnum(line_num, $1);
+        }
+    | char_val
+        {
+            $$ = mk_charval(line_num, $1);
         }
     | sign factor
         {

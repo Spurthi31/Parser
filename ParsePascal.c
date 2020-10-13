@@ -10,7 +10,7 @@
 #include "ParseTree/tree.h"
 #include "ParseTree/tree_types.h"
 #include "List/List.h"
-#include "SemanticCheck/SemCheck.h"
+//#include "SemanticCheck/SemCheck.h"
 #include "LexAndYacc/y.tab.h"
 
 extern FILE *yyin;

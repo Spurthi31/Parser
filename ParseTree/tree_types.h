@@ -13,7 +13,7 @@ enum StmtType{STMT_VAR_ASSIGN, STMT_PROCEDURE_CALL, STMT_COMPOUND_STATEMENT,
     STMT_IF_THEN, STMT_WHILE, STMT_FOR, STMT_FOR_VAR, STMT_FOR_ASSIGN_VAR};
 
 enum ExprType{EXPR_RELOP, EXPR_SIGN_TERM, EXPR_ADDOP, EXPR_MULOP,
-    EXPR_VAR_ID, EXPR_ARRAY_ACCESS, EXPR_FUNCTION_CALL, EXPR_INUM, EXPR_RNUM};
+    EXPR_VAR_ID, EXPR_ARRAY_ACCESS, EXPR_FUNCTION_CALL, EXPR_INUM, EXPR_RNUM, EXPR_CHARVAL};
 
 /* A statement subtree */
 struct Statement
@@ -130,6 +130,8 @@ struct Expression
 
         /* Real number */
         float r_num;
+
+        char char_val;
     } expr_data;
 };
 
