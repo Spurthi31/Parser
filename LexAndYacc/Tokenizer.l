@@ -14,7 +14,7 @@ integer  [0-9]+
 real [0-9]*[.][0-9]+
 id   [A-Za-z][A-Za-z0-9]*
 comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
-char ["].*["]
+string ["].*["]
 
 %%
 
@@ -274,7 +274,7 @@ char ["].*["]
     return REAL_TYPE;
 }
 
-"char" {
+"string" {
     #ifdef DEBUG_FLEX
         fprintf(stderr, "[CHAR_TYPE] ");
     #endif
@@ -306,7 +306,7 @@ char ["].*["]
     return ID;
 }
 
-{char} {
+{string} {
     #ifdef DEBUG_FLEX
         fprintf(stderr, "[CHAR:%s] ", yytext);
     #endif
