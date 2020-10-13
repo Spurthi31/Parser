@@ -15,7 +15,7 @@ y.tab.o: y.tab.c y.tab.h
 	$(CC) $(CCFLAGS) -c y.tab.c
 
 debug_lex.yy.o: lex.yy.c y.tab.h
-	$(CC) $(CCFLAGS) $(FLEX_DEBUG) -c lex.yy.c
+	$(CC) $(CCFLAGS)  -c lex.yy.c
 
 y.tab.c y.tab.h: Grammar.y
 	$(YACC) -d Grammar.y

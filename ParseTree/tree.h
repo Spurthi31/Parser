@@ -150,4 +150,6 @@ struct Expression *mk_inum(int line_num, int i_num);
 
 struct Expression *mk_rnum(int line_num, float r_num);
 
+struct Expression *mk_charval(int line_num, char char_val);
+
 #endif

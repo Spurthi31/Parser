@@ -1,4 +1,5 @@
 %{
+    #define DEBUG_FLEX
     #include <stdio.h>
     #include <stdlib.h>
     #include "../ErrVars.h"
@@ -13,6 +14,7 @@ integer  [0-9]+
 real [0-9]*[.][0-9]+
 id   [A-Za-z][A-Za-z0-9]*
 comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
+char ["].["]
 
 %%
 
@@ -272,6 +274,12 @@ comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
     return REAL_TYPE;
 }
 
+"char" {
+    #ifdef DEBUG_FLEX
+        fprintf(stderr, "[CHAR_TYPE] ");
+    #endif
+    return CHAR_TYPE;
+}
 
 {integer}   {
     #ifdef DEBUG_FLEX
@@ -296,6 +304,15 @@ comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
     #endif
     yylval.id = strdup(yytext);
     return ID;
+}
+
+{char} {
+    #ifdef DEBUG_FLEX
+        fprintf(stderr, "[CHAR:%s] ", yytext);
+    #endif
+    
+    yylval.char_val = yytext[0];
+    return CHAR_VAL;
 }
 
 .   {
