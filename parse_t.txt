@@ -2,11 +2,7 @@ program main1(input, output);
     var a,b,c,d: integer;
     var f: real;
     var e: string;
-<<<<<<< HEAD
-    var arr: array[1..5] of string;
-=======
     var arr: array[1..5] of char;
->>>>>>> ravi_branch
 
     (* Adds numbers *)
     
