@@ -1,7 +1,7 @@
 program main1(input, output);
     var a,b,c,d: integer;
     var f: real;
-    var e: char;
+    var e: string;
     var arr: array[1..5] of char;
 
     (* Adds numbers *)

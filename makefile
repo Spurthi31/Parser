@@ -17,7 +17,7 @@ TREE_OBJS_1 = List.o tree.o
 PARSER_OBJS = $(GRAMMAR_DIR)/lex.yy.o $(GRAMMAR_DIR)/y.tab.o
 ALL_OBJS = $(GPC_OBJS) $(TREE_OBJS) $(PARSER_OBJS)
 
-BIN = fuckyou
+BIN = parserexec
 
 ######## THE MAIN BUILD RULES ###########
 release: lexAndYacc parser bin
@@ -69,9 +69,9 @@ flexDebug:
 
 
 ############ CLEANING ##########3
-clean: clean_fuckyou clean_parser clean_LexYacc
-clean_fuckyou:
-	rm -f fuckyou
+clean: clean_parserexec clean_parser clean_LexYacc
+clean_parserexec:
+	rm -f parserexec
 clean_parser:
 	rm -f $(ALL_OBJS) *.o
 clean_LexYacc:

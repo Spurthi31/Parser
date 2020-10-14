@@ -14,7 +14,8 @@ integer  [0-9]+
 real [0-9]*[.][0-9]+
 id   [A-Za-z][A-Za-z0-9]*
 comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
-char ["].*["]
+char ["].["]
+string ["].*["]
 
 %%
 
@@ -281,6 +282,14 @@ char ["].*["]
     return CHAR_TYPE;
 }
 
+
+"string" {
+    #ifdef DEBUG_FLEX
+        fprintf(stderr, "[STR_TYPE] ");
+    #endif
+    return STR_TYPE;
+}
+
 {integer}   {
     #ifdef DEBUG_FLEX
         fprintf(stderr, "[INT_NUM:%d] ", atoi(yytext));
@@ -313,6 +322,15 @@ char ["].*["]
     
     yylval.char_val = yytext;
     return CHAR_VAL;
+}
+
+{string} {
+    #ifdef DEBUG_FLEX
+        fprintf(stderr, "[STR:%s] ", yytext);
+    #endif
+    
+    yylval.str_val = yytext;
+    return STR_VAL;
 }
 
 .   {
