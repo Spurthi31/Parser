@@ -10,7 +10,7 @@
       d
     [VARDECL of type 266]
       f
-    [VARDECL of type 267]
+    [VARDECL of type 269]
       e
     [ARRDECL of type 267 in range(1, 5)]
       arr
@@ -25,7 +25,7 @@
             [VAR]:
               [VAR_ID:c]
             [EXPR]:
-              [ADDOP:292]:
+              [ADDOP:294]:
                 [LEFT]:
                   [VAR_ID:a]
                 [RIGHT]:
@@ -34,7 +34,7 @@
             [VAR]:
               [VAR_ID:d]
             [EXPR]:
-              [MULOP:296]:
+              [MULOP:298]:
                 [LEFT]:
                   [VAR_ID:c]
                 [RIGHT]:
@@ -50,7 +50,7 @@
         [VAR]:
           [VAR_ID:f]
         [EXPR]:
-          [ADDOP:292]:
+          [ADDOP:294]:
             [LEFT]:
               [I_NUM:5]
             [RIGHT]:
@@ -64,7 +64,7 @@
         [VAR]:
           [VAR_ID:e]
         [EXPR]:
-          [CHAR_VAL:"arwvm"-"b";
+          [STR_VAL:"arwvm"-"b";
     multadd;
     while (a > b) do
       b := b + 1;
@@ -74,7 +74,7 @@ end.]
       [PROCEDURE_CALL:multadd]:
         [ARGS]:
       [WHILE]:
-        [RELOP:289]:
+        [RELOP:291]:
           [LEFT]:
             [VAR_ID:a]
           [RIGHT]:
@@ -84,7 +84,7 @@ end.]
           [VAR]:
             [VAR_ID:b]
           [EXPR]:
-            [ADDOP:292]:
+            [ADDOP:294]:
               [LEFT]:
                 [VAR_ID:b]
               [RIGHT]:

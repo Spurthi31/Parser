@@ -152,4 +152,6 @@ struct Expression *mk_rnum(int line_num, float r_num);
 
 struct Expression *mk_charval(int line_num, char *char_val);
 
+struct Expression *mk_strval(int line_num, char *str_val);
+
 #endif

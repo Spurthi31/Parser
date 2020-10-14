@@ -303,6 +303,10 @@ void expr_print(struct Expression *expr, FILE *f, int num_indent)
           fprintf(f, "[CHAR_VAL:%s]\n", expr->expr_data.char_val);
           break;
 
+        case EXPR_STRVAL:
+          fprintf(f, "[STR_VAL:%s]\n", expr->expr_data.str_val);
+          break;
+
         default:
           fprintf(stderr, "BAD TYPE IN expr_print!\n");
           exit(1);
@@ -489,6 +493,9 @@ void destroy_expr(struct Expression *expr)
           break;
 
         case EXPR_CHARVAL:
+          break;
+
+        case EXPR_STRVAL:
           break;
 
         default:
@@ -817,6 +824,18 @@ struct Expression *mk_charval(int line_num, char *char_val)
     new_expr->line_num = line_num;
     new_expr->type = EXPR_CHARVAL;
     new_expr->expr_data.char_val = char_val;
+
+    return new_expr;
+}
+
+struct Expression *mk_strval(int line_num, char *str_val)
+{
+    struct Expression *new_expr;
+    new_expr = (struct Expression *)malloc(sizeof(struct Expression));
+
+    new_expr->line_num = line_num;
+    new_expr->type = EXPR_STRVAL;
+    new_expr->expr_data.str_val = str_val;
 
     return new_expr;
 }
