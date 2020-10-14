@@ -14,10 +14,7 @@ integer  [0-9]+
 real [0-9]*[.][0-9]+
 id   [A-Za-z][A-Za-z0-9]*
 comment [(][*][^*]*[*]+([^*)][^*]*[*]+)*[)]
-<<<<<<< HEAD
-=======
 char ["].["]
->>>>>>> ravi_branch
 string ["].*["]
 
 %%
@@ -278,7 +275,7 @@ string ["].*["]
     return REAL_TYPE;
 }
 
-"string" {
+"char" {
     #ifdef DEBUG_FLEX
         fprintf(stderr, "[CHAR_TYPE] ");
     #endif
@@ -318,7 +315,7 @@ string ["].*["]
     return ID;
 }
 
-{string} {
+{char} {
     #ifdef DEBUG_FLEX
         fprintf(stderr, "[CHAR:%s] ", yytext);
     #endif
