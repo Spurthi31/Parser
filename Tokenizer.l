@@ -2,10 +2,10 @@
     #define DEBUG_FLEX
     #include <stdio.h>
     #include <stdlib.h>
-    #include "../ErrVars.h"
-    #include "../ParseTree/tree.h"
-    #include "../ParseTree/tree_types.h"
-    #include "../List/List.h"
+    #include "ErrVars.h"
+    #include "tree.h"
+    #include "tree_types.h"
+    #include "List.h"
     #include "y.tab.h"
 %}
 

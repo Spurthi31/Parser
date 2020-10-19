@@ -1,0 +1,40 @@
+program testdatatypes(input,output);
+
+//Global variable declarations
+var i: integer;
+var r: real;
+var c: char;
+var s: string;
+
+//Global declarations for arrays
+var arr1: array[1..5] of integer;
+var arr2: array[1..5] of real;
+var arr3: array[1..5] of char;
+var arr4: array[1..5] of string;
+
+function somefunction: integer;
+    //Local variable declarations
+    var i1: integer;
+    var r1: real;
+    var s1: string;
+    var arr5: array[1..5] of char;
+
+    //Procedure declarations
+
+    procedure someprocedure;
+    begin
+        //variable assignments
+        i1:=1
+    end;
+
+
+    begin
+        i1:=1
+    end;
+
+begin
+    //variable assignments
+    i:=1;
+    s:="Hey, this is a string"
+end.
+

@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "ParsePascal.h"
 #include "ErrVars.h"
-#include "ParseTree/tree.h"
-#include "ParseTree/tree_types.h"
-#include "List/List.h"
-#include "LexAndYacc/y.tab.h"
+#include "tree.h"
+#include "tree_types.h"
+#include "List.h"
+#include "y.tab.h"
 
 int main(int argc, char **argv)
 {

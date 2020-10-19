@@ -6,7 +6,7 @@
 #ifndef TREE_TYPES_H
 #define TREE_TYPES_H
 
-#include "../List/List.h"
+#include "List.h"
 
 /* Enums for readability with types */
 enum StmtType{STMT_VAR_ASSIGN, STMT_PROCEDURE_CALL, STMT_COMPOUND_STATEMENT,

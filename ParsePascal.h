@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "ParseTree/tree.h"
+#include "tree.h"
 
 Tree_t *ParsePascal(char *file);
 

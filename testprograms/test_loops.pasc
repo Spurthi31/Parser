@@ -1,0 +1,20 @@
+program testloops(input,output);
+
+var i,j: integer;
+
+var testarray: array[1..10] of integer;
+
+begin
+    i:=1;
+    for i:=1 to 10 do
+        testarray[i]:=i;
+        j:=j+1;
+
+    write(j);
+ss
+    while i>=1 do
+        begin
+            i:=i-1
+        end
+
+end.

@@ -7,11 +7,11 @@
 #include <stdlib.h>
 #include "ParsePascal.h"
 #include "ErrVars.h"
-#include "ParseTree/tree.h"
-#include "ParseTree/tree_types.h"
-#include "List/List.h"
+#include "tree.h"
+#include "tree_types.h"
+#include "List.h"
 //#include "SemanticCheck/SemCheck.h"
-#include "LexAndYacc/y.tab.h"
+#include "y.tab.h"
 
 extern FILE *yyin;
 extern int yyparse();

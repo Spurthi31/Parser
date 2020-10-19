@@ -15,6 +15,7 @@ program main1(input, output);
     end;
 
 begin
+    
     a := 5;
     f := 5+4.5;
     b := 3;

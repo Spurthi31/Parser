@@ -1,3 +1,5 @@
+LEX = flex
+YACC = byacc -v
 CC = gcc
 FLAGS = -g
 OPTIMIZE =
@@ -11,16 +13,16 @@ CCFLAGS = $(FLAGS) $(OPTIMIZE)
 
 # Object files to build
 GPC_OBJS = mainp.o ParsePascal.o
-TREE_OBJS = List/List.o $(TREE_DIR)/tree.o
+TREE_OBJS = List.o tree.o
 TREE_OBJS_1 = List.o tree.o
 
-PARSER_OBJS = $(GRAMMAR_DIR)/lex.yy.o $(GRAMMAR_DIR)/y.tab.o
+PARSER_OBJS = lex.yy.o y.tab.o
 ALL_OBJS = $(GPC_OBJS) $(TREE_OBJS) $(PARSER_OBJS)
 
 BIN = parserexec
 
 ######## THE MAIN BUILD RULES ###########
-release: lexAndYacc parser bin
+release: lex.yy.o y.tab.o parser bin
 
 debug_flexbison: debugFlexBison bin 
 debug_bison: bisonDebug parser bin
@@ -45,26 +47,41 @@ ParsePascal.o: $(PARSER_OBJS) $(TREE_OBJS) ParsePascal.h ParsePascal.c
 #ParsePascal.o: $(PARSER_OBJS) $(TREE_OBJS) ParsePascal.h ParsePascal.c
 #	$(CC) $(CCFLAGS) -DDEBUG_BISON -c ParsePascal.c
 
-List/List.o:
-	$(CC) $(CCFLAGS) -c List/List.c
+List.o:
+	$(CC) $(CCFLAGS) -c List.c
 
 
-$(TREE_DIR)/tree.o:
-	$(CC) $(CCFLAGS) -c $(TREE_DIR)/tree.c
+tree.o:
+	$(CC) $(CCFLAGS) -c tree.c
 
-lexAndYacc:
-	cd $(GRAMMAR_DIR) && $(MAKE)
 
 debugFlexBison:
-	cd $(GRAMMAR_DIR) && $(MAKE) flexDebug
+	debug_lex.yy.o y.tab.o
 	CCFLAGS += -DDEBUG_BISON
 
 bisonDebug:
-	cd $(GRAMMAR_DIR) && $(MAKE)
+	lex.yy.o y.tab.o
 	CCFLAGS += -DDEBUG_BISON
 
 flexDebug:
-	cd $(GRAMMAR_DIR) && $(MAKE) flexDebug
+	debug_lex.yy.o y.tab.o
+
+
+
+lex.yy.o: lex.yy.c y.tab.h
+	$(CC) $(CCFLAGS) -c lex.yy.c
+
+y.tab.o: y.tab.c y.tab.h
+	$(CC) $(CCFLAGS) -c y.tab.c
+
+debug_lex.yy.o: lex.yy.c y.tab.h
+	$(CC) $(CCFLAGS)  -c lex.yy.c
+
+y.tab.c y.tab.h: Grammar.y
+	$(YACC) -d Grammar.y
+
+lex.yy.c: Tokenizer.l
+	$(LEX) Tokenizer.l
 
 
 
@@ -75,4 +92,4 @@ clean_parserexec:
 clean_parser:
 	rm -f $(ALL_OBJS) *.o
 clean_LexYacc:
-	cd $(GRAMMAR_DIR) && $(MAKE) clean
+	rm -f *.o lex.yy.c y.tab.c y.tab.h y.output

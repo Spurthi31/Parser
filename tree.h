@@ -7,7 +7,7 @@
 
 #define LEAF NULL
 
-#include "../List/List.h"
+#include "List.h"
 #include "tree_types.h"
 #include <stdio.h>
 

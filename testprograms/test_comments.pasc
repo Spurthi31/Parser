@@ -1,0 +1,27 @@
+program testcomments(input,output);
+
+(*this program is a test for comments in PasC => A subset of Pascal *)
+
+//This is a single line comment
+
+(*
+ And this is a multi
+ line comment
+*)
+
+var i: integer;
+
+begin
+    //Comments work in main block too
+
+    (* Special characters such as #,$,%,^,&,*,(,), can be put in comments too *)
+
+    i:=i+1
+
+    // Whitespaces are ignored too
+
+
+
+
+
+end.
